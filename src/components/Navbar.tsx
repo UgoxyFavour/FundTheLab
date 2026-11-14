@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { usePollarWallet } from '../context/PollarContext';
+import { WithdrawModal } from './WithdrawModal';
 import { 
   Sparkles, 
   Wallet, 
@@ -18,7 +19,8 @@ import {
   ArrowRight,
   Eye,
   EyeOff,
-  AlertTriangle
+  AlertTriangle,
+  Building2
 } from 'lucide-react';
 
 interface NavbarProps {
@@ -44,6 +46,7 @@ export const Navbar: React.FC<NavbarProps> = ({
   const [showWalletDropdown, setShowWalletDropdown] = useState(false);
   const [showConnectModal, setShowConnectModal] = useState(false);
   const [showKeyModal, setShowKeyModal] = useState(false);
+  const [showWithdrawModal, setShowWithdrawModal] = useState(false);
   const [revealSecret, setRevealSecret] = useState(false);
   const [copied, setCopied] = useState(false);
 
@@ -174,6 +177,16 @@ export const Navbar: React.FC<NavbarProps> = ({
               <span>Submit Lab</span>
             </button>
 
+            {wallet.isConnected && (
+              <button
+                onClick={() => setShowWithdrawModal(true)}
+                className="hidden sm:flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-semibold bg-emerald-50 hover:bg-emerald-100 text-emerald-800 border border-emerald-200 transition shadow-xs"
+              >
+                <Building2 className="w-3.5 h-3.5 text-emerald-600" />
+                <span>Withdraw (NGN)</span>
+              </button>
+            )}
+
             {/* Wallet Button / Dropdown */}
             {wallet.isConnected ? (
               <div className="relative">
@@ -239,8 +252,22 @@ export const Navbar: React.FC<NavbarProps> = ({
                       <span className="text-teal-700 font-medium">Sponsored (0 XLM)</span>
                     </div>
 
-                    {/* View Secret Seed Key button */}
+                    {/* Withdraw to Nigerian Bank button */}
                     <div className="mt-2 pt-2 border-t border-slate-100">
+                      <button
+                        onClick={() => {
+                          setShowWalletDropdown(false);
+                          setShowWithdrawModal(true);
+                        }}
+                        className="w-full flex items-center justify-center gap-1.5 py-2 rounded-xl bg-emerald-50 hover:bg-emerald-100 text-emerald-800 text-xs font-semibold border border-emerald-200 transition shadow-xs"
+                      >
+                        <Building2 className="w-3.5 h-3.5 text-emerald-600" />
+                        Withdraw to Nigerian Bank (NGN)
+                      </button>
+                    </div>
+
+                    {/* View Secret Seed Key button */}
+                    <div className="mt-1.5">
                       <button
                         onClick={() => {
                           setShowWalletDropdown(false);
@@ -604,6 +631,12 @@ export const Navbar: React.FC<NavbarProps> = ({
           </div>
         </div>
       )}
+
+      {/* Nigerian Bank NGN Off-Ramp Modal */}
+      <WithdrawModal 
+        isOpen={showWithdrawModal} 
+        onClose={() => setShowWithdrawModal(false)} 
+      />
     </>
   );
 };
