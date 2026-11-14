@@ -34,7 +34,7 @@ export const CreateCampaignModal: React.FC<CreateCampaignModalProps> = ({
   const [eduEmail, setEduEmail] = useState('');
 
   const [title, setTitle] = useState('');
-  const [category, setCategory] = useState<Exclude<Category, 'All'>>('Longevity & Bio');
+  const [category, setCategory] = useState<Exclude<Category, 'All'>>('Public Health');
   const [targetAmount, setTargetAmount] = useState<number>(3500);
   const [summary, setSummary] = useState('');
   const [fullDescription, setFullDescription] = useState('');
@@ -309,11 +309,11 @@ export const CreateCampaignModal: React.FC<CreateCampaignModalProps> = ({
                   onChange={(e) => setCategory(e.target.value as any)}
                   className="w-full px-3 py-2 rounded-xl bg-slate-50 border border-slate-200 text-xs text-slate-900 focus:outline-none focus:border-cyan-600"
                 >
-                  <option value="Longevity & Bio">Longevity & Bio</option>
-                  <option value="AI & Compute">AI & Compute</option>
+                  <option value="Public Health">Public Health</option>
+                  <option value="Agritech & Food">Agritech & Food</option>
                   <option value="Clean Energy">Clean Energy</option>
-                  <option value="Neuroscience">Neuroscience</option>
-                  <option value="Quantum & Physics">Quantum & Physics</option>
+                  <option value="AI & Compute">AI & Compute</option>
+                  <option value="Longevity & Bio">Longevity & Bio</option>
                 </select>
               </div>
             </div>

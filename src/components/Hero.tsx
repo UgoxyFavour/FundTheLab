@@ -22,21 +22,22 @@ interface HeroProps {
 
 const CATEGORIES: Category[] = [
   'All',
-  'Longevity & Bio',
-  'AI & Compute',
+  'Public Health',
+  'Agritech & Food',
   'Clean Energy',
-  'Neuroscience',
-  'Quantum & Physics'
+  'AI & Compute',
+  'Longevity & Bio'
 ];
 
 const UNIVERSITIES = [
-  'Stanford University',
-  'MIT CSAIL',
-  'Oxford University',
-  'Imperial College London',
-  'Cambridge Quantum',
-  'ETH Zürich',
-  'Harvard BioLab'
+  'University of Ibadan (UI)',
+  'University of Lagos (UNILAG)',
+  'Obafemi Awolowo Univ (OAU)',
+  'Ahmadu Bello Univ (ABU)',
+  'Univ of Nigeria Nsukka (UNN)',
+  'Covenant University',
+  'FUTA Akure',
+  'FUNAAB Abeokuta'
 ];
 
 export const Hero: React.FC<HeroProps> = ({

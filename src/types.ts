@@ -1,8 +1,10 @@
 export type Category = 
   | 'All'
-  | 'Longevity & Bio'
-  | 'AI & Compute'
+  | 'Public Health'
+  | 'Agritech & Food'
   | 'Clean Energy'
+  | 'AI & Compute'
+  | 'Longevity & Bio'
   | 'Neuroscience'
   | 'Quantum & Physics';
 

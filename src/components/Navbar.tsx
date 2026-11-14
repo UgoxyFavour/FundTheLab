@@ -376,28 +376,28 @@ export const Navbar: React.FC<NavbarProps> = ({
 
                 <div className="space-y-2.5">
                   <button
-                    onClick={() => handleSelectGoogleAccount('dr.elena.rostova@stanford.edu', 'Dr. Elena Rostova')}
+                    onClick={() => handleSelectGoogleAccount('dr.adeyemi@ui.edu.ng', 'Dr. Babatunde Adeyemi')}
                     className="w-full p-3 rounded-xl border border-slate-200 hover:border-cyan-500 hover:bg-slate-50 flex items-center gap-3 text-left transition"
                   >
                     <div className="w-9 h-9 rounded-full bg-cyan-100 text-cyan-700 font-bold flex items-center justify-center text-sm">
-                      ER
+                      BA
                     </div>
                     <div>
-                      <div className="font-bold text-xs text-slate-900">Dr. Elena Rostova</div>
-                      <div className="text-[11px] text-slate-500">dr.elena.rostova@stanford.edu</div>
+                      <div className="font-bold text-xs text-slate-900">Dr. Babatunde Adeyemi</div>
+                      <div className="text-[11px] text-slate-500">dr.adeyemi@ui.edu.ng • Univ of Ibadan</div>
                     </div>
                   </button>
 
                   <button
-                    onClick={() => handleSelectGoogleAccount('marcus.vance@mit.edu', 'Marcus Vance')}
+                    onClick={() => handleSelectGoogleAccount('engr.adeleke@oauife.edu.ng', 'Engr. Folashade Adeleke')}
                     className="w-full p-3 rounded-xl border border-slate-200 hover:border-cyan-500 hover:bg-slate-50 flex items-center gap-3 text-left transition"
                   >
                     <div className="w-9 h-9 rounded-full bg-indigo-100 text-indigo-700 font-bold flex items-center justify-center text-sm">
-                      MV
+                      FA
                     </div>
                     <div>
-                      <div className="font-bold text-xs text-slate-900">Marcus Vance</div>
-                      <div className="text-[11px] text-slate-500">marcus.vance@mit.edu</div>
+                      <div className="font-bold text-xs text-slate-900">Engr. Folashade Adeleke</div>
+                      <div className="text-[11px] text-slate-500">engr.adeleke@oauife.edu.ng • OAU Ile-Ife</div>
                     </div>
                   </button>
 
